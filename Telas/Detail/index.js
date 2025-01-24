@@ -33,32 +33,3 @@ const styles = StyleSheet.create({
 
 export default Detail;
 
-
-<script>
-  let celsius = ''; // Variável para armazenar o valor digitado em Celsius
-  let fahrenheit = ''; // Variável para armazenar o valor convertido em Fahrenheit
-
-  function converter() {
-    const celsiusNumber = parseFloat(celsius); // Converte o texto para número (float)
-    if (!isNaN(celsiusNumber)) {
-      fahrenheit = (celsiusNumber * 9 / 5) + 32; // Converte para Fahrenheit
-    } else {
-      fahrenheit = 'Valor inválido'; // Mensagem para valores não numéricos
-    }
-  }
-</script>
-
-<div>
-  <label for="celsius-input">Temperatura em Celsius:</label>
-  <input
-    id="celsius-input"
-    type="text"
-    bind:value={celsius}
-    placeholder="Digite a temperatura em Celsius"
-  />
-  <button on:click={converter}>Converter</button>
-
-  {#if fahrenheit !== ''}
-    <p>Temperatura em Fahrenheit: {fahrenheit}</p>
-  {/if}
-</div>
